@@ -30,8 +30,9 @@ function buildQueryString(array $arr)
 
     ksort($arr);
     $stroka = "";
-    $key_last =end(array_keys($arr));
-  //  echo $key_last;
+    //$key_last =end(array_keys($arr));
+    $key_last = array_key_last($arr);
+    echo $key_last;
     foreach($arr as $key=>$value)
     {
 
@@ -45,6 +46,18 @@ function buildQueryString(array $arr)
         echo "$key"."<>".$key_last.">".$stroka."<br/>";
     }
     return $stroka;
+}
+
+
+function buildQueryString_2($array)
+{
+    ksort($array);
+    $result = [];
+    foreach ($array as $key => $value) {
+        $result[] = "{$key}={$value}";
+    }
+
+    return implode('&', $result);
 }
 $fruits = array("d"=>"lemon", "a"=>"orange", "b"=>"banana", "c"=>"apple");
 
