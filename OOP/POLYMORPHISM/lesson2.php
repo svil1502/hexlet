@@ -1,4 +1,5 @@
 <?php
+//Диспетчеризация по ключу данные
 function getLinks($tags)
 {
     $mapping = [
